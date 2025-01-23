@@ -1,0 +1,8 @@
+import dotenv  from "dotenv";
+dotenv.config();
+
+const JWT_USER_PASSWORD = process.env.JWT_USER_PASSWORD
+const JWT_ADMIN_PASSWORD = process.env.JWT_ADMIN_PASSWORD
+const STRIPE_SECRET_KEY="sk_test_51QjdcZG4OXePMlCTED8tjn5U6g7cdJBoeGG2HsLSJr6iJ0cYQSVbrhpcboZXHNNBIWriAieENA4O86X7eM7Prr0u009qRBxokK";
+
+export default {JWT_USER_PASSWORD,JWT_ADMIN_PASSWORD,STRIPE_SECRET_KEY};
