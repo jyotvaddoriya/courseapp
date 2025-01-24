@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Navigate, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
@@ -15,7 +15,7 @@ import CourseCreate from "./admin/CourseCreate";
 import OurCourses from "./admin/OurCourses";
 
 function App() {
-  const user = JSON.parse(localStorage.getItem("user"));
+  // const user = JSON.parse(localStorage.getItem("user"));
   const admin = JSON.parse(localStorage.getItem("admin"));
   return (
     <div>

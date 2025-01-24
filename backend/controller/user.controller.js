@@ -88,7 +88,7 @@ export const logout = async (req, resp) => {
 };
 
 export const purchases=async(req,resp) => { 
-    const { id } = req.params;
+   
     const userId=req.userId;
     try {
         const purchased=await Purchase.find({ userId:userId });

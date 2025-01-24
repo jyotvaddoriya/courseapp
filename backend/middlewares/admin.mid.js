@@ -16,6 +16,7 @@ function adminMiddleware(req, resp, next) {
         console.log("Decoded Token:", decoded);  
         req.adminId = decoded.id;
         next();
+        
     } catch (error) {
         console.log("Invalid token", error);
         return resp.status(401).json({ errors: "Invalid token" });

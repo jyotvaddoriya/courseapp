@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
@@ -53,7 +53,7 @@ function Buy() {
       }
     };
     fetchBuyCourseData();
-  }, [courseId]);
+  }, [courseId,token]);
 
   const handlePurchase = async (event) => {
     event.preventDefault();
@@ -104,12 +104,11 @@ function Buy() {
       setCardError(confirmError.message);
     } else if (paymentIntent.status === "succeeded") {
       console.log("Payment succeeded: ", paymentIntent);
-      setCardError("your payment id: ", paymentIntent.id);
+     
       const paymentInfo = {
         email: user?.user?.email,
         userId: user?.user?._id,
         courseId: courseId,
-        paymentId: paymentIntent.id,
         amount: paymentIntent.amount,
         status: paymentIntent.status,
       };

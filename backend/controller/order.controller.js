@@ -12,6 +12,7 @@ export const orderData = async (req, res) => {
     if (orderInfo) {
       await Purchase.create({ userId, courseId });
     }
+    
   } catch (error) {
     console.log("Error in order: ", error);
     res.status(401).json({ errors: "Error in order creation" });
